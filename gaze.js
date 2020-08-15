@@ -1,20 +1,16 @@
-//Kalman filter default to ON
-
-window.applyKalmanFilter = true;
-
-//Don't save data on page reload, each instance is new, no database
-window.saveDataAcrossSessions = false;
-
-window.onload = async function() {
+window.onload = function() {
   
-  webgazer.params.showVideoPreview = true;
-  const webgazerInstance = await webgazer.setRegression('ridge')
-  .setTracker('TFFacemesh')
-  .begin();
+  webgazer.setRegression('weightedRidge') //ridge, weightedRidge, threadedRidge, linear
   
-  webgazerInstance.showPredictionPoints(false);  
-  /* shows a square every 100 milliseconds where current prediction is */
+  .setTracker("TFFacemesh"); //set tracker module clmtracker
   
-  // Add the SVG component on the top of everything.
-  setup
+  .setGazeListener(function (data, clock) {
+    // data is object containing x and y key, prediction coordinates
+    // clock is elapsed time in milliseconds since webgazer.begin() was called
+    
+  }).begin()
+  
+  .showPredictionPoints(true); 
+  //shows a square every 100 milliseconds where prediction is//
+
 }
