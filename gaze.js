@@ -84,3 +84,16 @@ window.onbeforeunload = function(){
   
 }
 
+/* HELPER FUNCTION */
+
+function get(id) {
+  
+  return document.getElementById(id);
+  
+}
+
+function stopTracking() {
+  
+  webgazer.end(); //Save webgaze data  
+  
+}
