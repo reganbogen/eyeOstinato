@@ -77,3 +77,10 @@ window.onload = function() {
   setTimeout(checkIfReady, 100);
 };
 
+window.onbeforeunload = function(){
+  
+  webgazer.end(); //saves the data even if you reload the page
+  window.localStorage.clear(); //deletes the data for a fresh session or reload
+  
+}
+
