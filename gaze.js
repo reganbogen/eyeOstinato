@@ -11,7 +11,7 @@ webgazer.setTracker("TFFacemesh"); //set a tracker module
 
 webgazer.addTrackerModule("newTracker", NewTrackerConstructor); //add a new tracker module
 
-webgazer.setRegression("threadedRidge"); //set a regression module
+webgazer.setRegression("weightedRidge"); //set a regression module
 //other options: ridge, weightedRidge, threadedRidge
 
 webgazer.addRegressionModule("newReg", NewRegConstructor); //add a new regression module
@@ -19,3 +19,5 @@ webgazer.addRegressionModule("newReg", NewRegConstructor); //add a new regressio
 webgazer.util.bound(prediction);
 prediction.x;
 prediction.y;
+
+window.saveDataAcrossSessions = false;
