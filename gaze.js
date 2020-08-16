@@ -10,7 +10,7 @@ webgazer.setGazeListener(function(data, elapsedTime) {
     console.log(elapsedTime); //elapsed time is based on time since begin was called
 }).begin();
 
-webgazer.showPredictionPoints(false);
+webgazer.showPredictionPoints(true)
 
 webgazer.setTracker("TFFacemesh"); //set a tracker module
 
@@ -22,16 +22,4 @@ window.saveDataAcrossSessions = false;
 function setup() {
   createCanvas(window.innerWidth, window.innerHeight);
   background(234);
-}
-
-function draw(){
-  background(234);
-  ellipse(myX, myY, 40, 40);
-}
-
-window.onbeforeunload = function(){
-  
-  webgazer.end(); //saves the data even if you reload the page
-  window.localStorage.clear(); //deletes the data for a fresh session or reload
-  
 }
